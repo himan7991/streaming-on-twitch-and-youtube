@@ -23,10 +23,10 @@ For now:
 Soon:
 <li>After completing both files I will combine them into one and make a more comprehensive/easily readable file</li>
 
+<br>
 <strong>How to read this mess I made: </strong>
 <br>
 Since this is not a simple JSON, but a JSONC (meaning it also supports comments) there are a couple steps you have to do to.
-<br>
 <i>Unfortunatelly I don't have time to develop a JavaScript program to do this automatically right now.</i>
 <ol> 
   <li>Visit https://komkom.github.io/ and paste the entire code in the text area</li>
