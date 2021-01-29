@@ -71,7 +71,7 @@
 											Poll has to be pasted as link in chat
 											People watching the VOD will not be able to access the poll (I think)
 								*/
-						"predictions": true
+						"predictions": false
 					}
 				}
 			]

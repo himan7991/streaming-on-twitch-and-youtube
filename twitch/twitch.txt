@@ -1,0 +1,320 @@
+/* 	Streaming on different platforms (Twitch - YouTube)
+	A comprehensive guide
+
+	Author: Haim UpsideGR S
+
+	Sources: unless otherwise stated, all information provided comes directly from Twitch's documentation
+	or my own personal experience
+
+	Date: 2021-01-29
+*/
+Twitch
+Non-affiliate
+requirements: none
+benefits: 
+    monetization: null
+    /* 	This means
+        Subsriptions:
+            Viewers cannot subscribe
+            Viewers cannot cheer bits
+
+
+            ---- VERY IMPORTANT ----
+
+
+        Ads:
+            Streamer is also not allowed to play ads 
+            Ads will not play on the stream
+                Including
+                    PREROLL ADS - ads that play when a viewer joins the stream
+                    MIDROLL ADS - ads affiliates and partners can manually play
+    */
+        cosmetics: null
+        VODFeatures: 
+            storageDays: 14
+            reruns: false
+            premieres: false
+        
+        support: standard
+        teams: can't join or create
+        broadcastFeatures: 
+            transcoding: as available
+            squadStream: false
+            subscriberStreams: false
+            delay: null
+            bitrate: 6000
+        
+        otherFeatures: 
+            channelPoints: false /* Alternatives
+                            points through StreamLabs or StreamElements bots
+                            these are also awarded when viewers watch the stream
+                            EXTRA: users can gamble dual with their points etc.
+                        */
+            polls: false /* Alternatives
+                        poll.ma.pe
+                            Advantages
+                                Poll shows as overlay on stream
+                                Can be seen by people watching the VOD
+                                Looks cool
+                            Disadvantages
+                                Only the broadcaster can start the poll since it is linked to the twitch account
+                        Strawpoll
+                            Advantages
+                                Mods can start a poll
+                            Disadvantages
+                                Poll has to be pasted as link in chat
+                                People watching the VOD will not be able to access the poll (I think)
+                    */
+            predictions: false
+					
+				
+			
+		
+		
+			name: affiliate
+			requirements: 
+				// In the last 30 days:
+				streamDays: 7
+				streamHours: 8
+				averageViewers: 3
+				// Not in the last 30 days:
+				followers: 50
+			
+			application: 
+				availability: User can apply immediately after completing the requirements
+				review: not necessary
+				rejectabilty: twitch reserves the right to reject the application
+				// Most applications are accepted automatically
+			
+			contactCancelation: user must contact twitch
+			benefits: 
+				
+					monetization: 
+						
+							subscriptions: 
+								
+									tier: 1
+									subPoints: 1 // Math.ceiling(price) / 5 = 1
+									price: 4.99 // 3.99 for 1st month
+									emotes: 5 // Max number depending on sub points - see https://help.twitch.tv/s/article/subscriber-emote-guide?language=en_US#emoteslots
+									userGetsPreviousTiersEmotes: false
+									profit: 2.50
+								
+								
+									tier: 2
+									subPoints: 2 // Math.ceiling(price) / 5 = 2
+									price: 9.99
+									emotes: 1 // Max number depending on sub points - see https://help.twitch.tv/s/article/subscriber-emote-guide?language=en_US#emoteslots
+									userGetsPreviousTiersEmotes: true
+									profit: 5.00
+								
+								
+									tier: 3
+									subPoints: 5 // Math.ceiling(price) / 5 = 5
+									price: 24.99
+									emotes: 1 // Max number depending on sub points - see https://help.twitch.tv/s/article/subscriber-emote-guide?language=en_US#emoteslots
+									userGetsPreviousTiersEmotes: true
+									profit: 12.50
+								
+							
+						
+						
+							bits: 
+								recieved: 1
+								cents: 1
+							
+						
+						
+							ads: 
+								profit: fixed
+								profitPercent: 10 // Source: Devin Nash
+							
+						
+					
+					cosmetics: 
+						
+							subscriberBadges: 
+								month1: true
+								month2: true
+								month3: true
+								month6: true
+								month9: true
+								year1: true
+								year1.5: false
+								year2: false
+								year2.5: false
+								year3: false
+								year3.5: false
+								year4: false
+								year4.5: false
+								year5: false
+								year5.5: false
+								year6: false
+								year6.5: false
+								year7: false
+								year7.5: false
+								year8: false
+							
+							emotes: see subscriptions
+							emotePrefix: depands on username
+							/* 	when user becomes affliate
+									twitch will automatically create an emote prefix
+									emote prefix is (generally) the first 6 characters (letters or numbers) of the username
+										if the username is shorter than 6 characters
+										twitch will add random numbers until it is 6 characters
+							
+							*/
+							bitBadges: true
+							cheerMotes: true
+							badge: false
+							botSubscription: false
+							lifetimeSubscriptions: 0
+						
+					
+					VODFeatures: 
+						storageDays: 14
+						reruns: true
+						premieres: true
+					
+					support: standard
+					teams: can join but not create
+					broadcastFeatures: 
+						transcoding: as available - priority
+						squadStream: false
+						subscriberStreams: true
+						delay: null // might be old -- TODO: Check
+						bitrate: 6000
+					
+					otherFeatures: 
+						channelPoints: true
+						polls: true
+						predictions: true
+					
+				
+			
+		
+		
+			name: partner
+			requirements: 
+				// In the last 30 days:
+				streamDays: 12
+				streamHours: 25
+				averageViewers: 75
+			
+			application: 
+				availability: User can apply immediately after completing the requirements
+				review: must be reviewed
+				rejectabilty: twitch reserves the right to reject the application
+				// Please note that the Path to Partner achievement lists the minimum criteria we look for in potential Partners and completing them does not guarantee Partnership 
+				// - Twitch (https://www.twitch.tv/p/partners/)
+			
+			contactCancelation: user must contact twitch
+			benefits: 
+				
+					monetization: 
+						
+							subscriptions: 
+								
+									tier: 1
+									subPoints: 1 // Math.ceiling(price) / 5 = 1
+									price: 4.99 // 3.00 for 1st month
+									emotes: 60 // Max number depending on sub points - see https://help.twitch.tv/s/article/subscriber-emote-guide?language=en_US#emoteslots
+									userGetsPreviousTiersEmotes: false
+									profit: depends on partner contract
+								
+								
+									tier: 2
+									subPoints: 2 // Math.ceiling(price) / 5 = 2
+									price: 9.99
+									emotes: 5 // Max number depending on sub points - see https://help.twitch.tv/s/article/subscriber-emote-guide?language=en_US#emoteslots
+									userGetsPreviousTiersEmotes: true
+									profit: depends on partner contract
+								
+								
+									tier: 3
+									subPoints: 5 // Math.ceiling(price) / 5 = 5
+									price: 24.99
+									emotes: 5 // Max number depending on sub points - see https://help.twitch.tv/s/article/subscriber-emote-guide?language=en_US#emoteslots
+									userGetsPreviousTiersEmotes: true
+									profit: depends on partner contract
+								
+							
+						
+						
+							bits: 
+								recieved: 1
+								cents: 1
+							
+						
+						
+							ads: 
+								profit: fixed
+								profitPercent: 10 // Source: Devin Nash
+							
+						
+					
+					cosmetics: 
+						
+							subscriberBadges: 
+								month1: true
+								month2: true
+								month3: true
+								month6: true
+								month9: true
+								year1: true
+								year1.5: true
+								year2: true
+								year2.5: true
+								year3: true
+								year3.5: true
+								year4: true
+								year4.5: true
+								year5: true
+								year5.5: true
+								year6: true
+								year6.5: true
+								year7: true
+								year7.5: true
+								year8: true
+							
+							emotes: see subscriptions
+							emotePrefix: custom
+							canBeChanged: true // Partners can change their username whenever they way
+							minChar: 3 // Unlike Affiliates the Partner emote prefix can be as short as 3 characters
+							bitBadges: true
+							cheerMotes: true
+							badge: true // Partner purple check mark badge
+							botSubscription: true
+							lifetimeSubscriptions: 3
+						
+					
+					VODFeatures: 
+						storageDays: 60
+						reruns: true
+						premieres: true
+					
+					support: priority
+					teams: can join and create
+					broadcastFeatures: 
+						transcoding: guarranted
+						squadStream: true
+						subscriberStreams: true
+						delay: 15 // In minutes
+						bitrate: 8000
+					
+					otherFeatures: 
+						channelPoints: true
+						polls: true
+						predictions: true
+					
+					/* Access to partner-only opportunities
+						This includes 
+							Panels
+							Meet & greets
+							etc.
+					*/
+				
+			
+		
+	
+
