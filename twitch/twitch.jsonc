@@ -42,7 +42,10 @@
 						"premieres": false
 					},
 					"support": "standard",
-					"teams": "can't join or create",
+					"teams": {
+						"canJoin": false,
+						"canCreate": false
+					},
 					"broadcastFeatures": {
 						"transcoding": "as available",
 						"squadStream": false,
@@ -139,28 +142,14 @@
 					],
 					"cosmetics": [
 						{
-							"subscriberBadges": {
-								"month1": true,
-								"month2": true,
-								"month3": true,
-								"month6": true,
-								"month9": true,
-								"year1": true,
-								"year1.5": false,
-								"year2": false,
-								"year2.5": false,
-								"year3": false,
-								"year3.5": false,
-								"year4": false,
-								"year4.5": false,
-								"year5": false,
-								"year5.5": false,
-								"year6": false,
-								"year6.5": false,
-								"year7": false,
-								"year7.5": false,
-								"year8": false
-							},
+							"subscriberBadges": [
+								"month1",
+								"month2",
+								"month3",
+								"month6",
+								"month9",
+								"year1"
+							],
 							"emotes": "see subscriptions",
 							"emotePrefix": "depends on username",
 							/* 	when user becomes affliate
@@ -183,7 +172,10 @@
 						"premieres": true
 					},
 					"support": "standard",
-					"teams": "can join but not create",
+					"teams": {
+						"canJoin": true,
+						"canCreate": false
+					},
 					"broadcastFeatures": {
 						"transcoding": "as available - priority",
 						"squadStream": false,
@@ -261,28 +253,28 @@
 					],
 					"cosmetics": [
 						{
-							"subscriberBadges": {
-								"month1": true,
-								"month2": true,
-								"month3": true,
-								"month6": true,
-								"month9": true,
-								"year1": true,
-								"year1.5": true,
-								"year2": true,
-								"year2.5": true,
-								"year3": true,
-								"year3.5": true,
-								"year4": true,
-								"year4.5": true,
-								"year5": true,
-								"year5.5": true,
-								"year6": true,
-								"year6.5": true,
-								"year7": true,
-								"year7.5": true,
-								"year8": true
-							},
+							"subscriberBadges": [
+								"month1",
+								"month2",
+								"month3",
+								"month6",
+								"month9",
+								"year1",
+								"year1.5",
+								"year2",
+								"year2.5",
+								"year3",
+								"year3.5",
+								"year4",
+								"year4.5",
+								"year5",
+								"year5.5",
+								"year6",
+								"year6.5",
+								"year7",
+								"year7.5",
+								"year8"
+							],
 							"emotes": "see subscriptions",
 							"emotePrefix": "custom",
 							"canBeChanged": true, // Partners can change their username whenever they way
@@ -300,7 +292,10 @@
 						"premieres": true
 					},
 					"support": "priority",
-					"teams": "can join and create",
+					"teams": {
+						"canJoin": true,
+						"canCreate": true
+					},
 					"broadcastFeatures": {
 						"transcoding": "guarranted",
 						"squadStream": true,
@@ -322,5 +317,111 @@
 				}
 			]
 		}
+	],
+	"discorverability": [ // TWITCH ONLY RECOMMENDS CHANNELS THAT ARE CURRENTLY LIVE
+		{
+			"frontPage": {
+				// Channels showing in the front page
+				"topPart": 8, // in a carousel
+				"other": 5, // includes channels you are already following
+				"categories": 12, // categories based on what you watch
+				"whileAisOffiline": 6, // channels that are similar to X in some way
+				"fromXcategory": 6, // channels that are in a category you watch (can include channels you are already following. Seems to be mostly channels you are NOT following )
+				"fromYcategory": 6, // same as above
+				"fromZcategory": 6, // same as above
+				"hypeTrain": 6, // channels that have currently a Hype Train (see Affiliate and/or Partner) active
+				"clips": { // clips from channels you are ALREADY FOLLOWING
+					"shownOnFrontpage": 6,
+					"linkToOriginalVideo": true, // technically the user can click the title of the stream but it's not intuative
+					"avilableShareOptions": [
+						"twitter",
+						"facebook",
+						"reddit",
+						"embed",
+						"copyURL"
+					]
+				}
+			}
+		},
+		{
+			"recommendationPanel": { // this shows on the left of the page when navigating twitch.tv NOT clips.twitch.tv (see below)
+				"defaultState": "expanded", // in its expanded state, the panel shows the same number of channels as below, but it includes the cateogry/game and viewership
+				"followingProfilesShown": 12, // sorted by viewership (high to low)
+				"newProfilesShown": 6
+				// Would assume very low click through rate
+			}
+		},
+		{
+			"browse": [
+				{
+					"tags": [
+						"Driving/racing game",
+						"Shoot 'em up",
+						"Creative",
+						"Indie game",
+						"Horror",
+						"Autobattler",
+						"Roguelike",
+						"Rhythm & music game",
+						"Party",
+						"Survival",
+						"FPS",
+						"Open world",
+						"RPG",
+						"Fighting",
+						"Pingball",
+						"Game overlay",
+						"Card & board game",
+						"Strategy",
+						"Mobile game",
+						"Adventure game",
+						"Arcade",
+						"Puzzle",
+						"4X",
+						"Gambling game",
+						"Mystery",
+						"MMO",
+						"Platformer",
+						"Hidden objects"
+					]
+				},
+				{
+					"sorting": [
+						"recommended",
+						"viewers high to low"
+					]
+				}
+			]
+		},
+		{
+			"gameDirectory": [
+				{
+					"tags": "see comment" // all tags are available here https://www.twitch.tv/directory/all/tags
+				},
+				{
+					"sorting": [
+						"recommended",
+						"viewers high to low"
+					]
+				}
+			]
+		},
+		{
+			"liveChannels": [
+				{
+					"sorting": [
+						"recommended",
+						"viewers high to low",
+						"viewers low to high",
+						"recently started"
+					]
+				}
+			]
+		},
+		{
+			"clips": {
+				"linkToOriginalVideo": true,
+			}
+		}
 	]
-}
+} // END OF TWITCH
