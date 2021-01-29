@@ -3,6 +3,7 @@ Looking to see which site is the best for streaming in 2021? Look no further.
 
 This is a complete guide/map of all the benefits, shortcomings, and differences between the two platforms
 
+If you have something to add, please use the Issues tab and I will add it!
 
 Author:
 Haim - aka UpsideGR aka himan7991 - S
