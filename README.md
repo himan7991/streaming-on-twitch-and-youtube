@@ -27,8 +27,7 @@ Soon:
 </ul>
 
 <br>
-<strong>How to read this mess I made: </strong>
-<br>
+<p><strong>How to read this mess I made </strong> until I have time to make it into a pretty word document: </p>
 Since this is not a simple JSON, but a JSONC (meaning it also supports comments) there are a couple steps you have to do to.
 <i>Unfortunatelly I don't have time to develop a JavaScript program to do this automatically right now.</i>
 <ol> 
