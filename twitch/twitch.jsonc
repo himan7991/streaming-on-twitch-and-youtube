@@ -15,7 +15,7 @@
 			"name": "non affiliate",
 			"requirements": "none",
 			"application": "none",
-			"contactCancelation": null,
+			"contractCancelation": null,
 			"benefits": [
 				{
 					"monetization": null,
@@ -92,7 +92,7 @@
 				"rejectabilty": "twitch reserves the right to reject the application"
 				// Most applications are accepted automatically
 			},
-			"contactCancelation": "user must contact twitch",
+			"contractCancelation": "user must contact twitch",
 			"benefits": [
 				{
 					"monetization": [
@@ -162,7 +162,7 @@
 								"year8": false
 							},
 							"emotes": "see subscriptions",
-							"emotePrefix": "depands on username",
+							"emotePrefix": "depends on username",
 							/* 	when user becomes affliate
 									twitch will automatically create an emote prefix
 									emote prefix is (generally) the first 6 characters (letters or numbers) of the username
@@ -214,7 +214,7 @@
 				// "Please note that the Path to Partner achievement lists the minimum criteria we look for in potential Partners, and completing them does not guarantee Partnership" 
 				// - Twitch (https://www.twitch.tv/p/partners/)
 			},
-			"contactCancelation": "user must contact twitch",
+			"contractCancelation": "user must contact twitch",
 			"benefits": [
 				{
 					"monetization": [
