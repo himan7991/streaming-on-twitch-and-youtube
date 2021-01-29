@@ -180,7 +180,7 @@
 						"transcoding": "as available - priority",
 						"squadStream": false,
 						"subscriberStreams": true,
-						"delay": null, // might be old -- TODO: Check
+						"delay": null, // can be set up in OBS or other broadcasting software
 						"bitrate": 6000
 					},
 					"otherFeatures": {
@@ -300,7 +300,7 @@
 						"transcoding": "guarranted",
 						"squadStream": true,
 						"subscriberStreams": true,
-						"delay": 15, // In minutes
+						"delay": 15, // In minutes, from Creator Dashboard
 						"bitrate": 8000
 					},
 					"otherFeatures": {
@@ -424,4 +424,6 @@
 			}
 		}
 	]
+	// TODO - add market share, demographics, latency, streamer dashboards, tools available - streamelements/streamlabs/nightbots/fossa
+		
 } // END OF TWITCH
