@@ -36,5 +36,5 @@ Since this is not a simple JSON, but a JSONC (meaning it also supports comments)
   <li>Visit https://codebeautify.org/jsonviewer, paste the code you get from the first site and click Tree Viewer</li>
 </ol>
 
-Alternatively you can use the txt file I have in the Twitch folder, which is a simplified version of the twitch.jsonc.
+Alternatively you can use the .txt file I have in the Twitch folder, which is a simplified version of the .jsonc file.
 If you want to contribute and make it into a pretty word document that would also be appreciated. Feel free to send me a DM on Twitter
