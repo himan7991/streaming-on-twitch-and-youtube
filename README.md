@@ -19,6 +19,7 @@ For now:
   <li>If you want to read everything about Twitch, check the Twitch folder</li>
   <li>If you want to read everything about YouTube, check the YouTube folder</li>
 </ul>
+  <p>Also for now, the <strong>YouTube folder is empty</strong> because I still haven't finished the Twitch file yet. Additionally I'm looking for YouTube streamers that can help me with some things, similar to the "documentation" I have done for Twitch. If you are interested, feel free to use the Issues tab or send me a DM on Twitter.</p> 
   
 Soon:
 <ul>
@@ -34,3 +35,6 @@ Since this is not a simple JSON, but a JSONC (meaning it also supports comments)
   <li>Visit https://komkom.github.io/ and paste the entire code in the text area</li>
   <li>Visit https://codebeautify.org/jsonviewer, paste the code you get from the first site and click Tree Viewer</li>
 </ol>
+
+Alternatively you can use the txt file I have in the Twitch folder, which is a simplified version of the twitch.jsonc.
+If you want to contribute and make it into a pretty word document that would also be appreciated. Feel free to send me a DM on Twitter
