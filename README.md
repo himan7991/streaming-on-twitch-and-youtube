@@ -21,7 +21,9 @@ For now:
 </ul>
   
 Soon:
-<li>After completing both files I will combine them into one and make a more comprehensive/easily readable file</li>
+<ul>
+  <li>After completing both files I will combine them into one and make a more comprehensive/easily readable file</li>
+</ul>
 
 <br>
 <strong>How to read this mess I made: </strong>
