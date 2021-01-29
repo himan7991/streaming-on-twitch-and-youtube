@@ -51,26 +51,26 @@
 						"bitrate": 6000
 					},
 					"otherFeatures": {
-						"channelPoints": false, /* 	Alternatives
-														points through StreamLabs or StreamElements bots
-														these are also awarded when viewers watch the stream
-														EXTRA: users can gamble, dual with their points etc.
-												*/
-						"polls": false, /* 	Alternatives
-												poll.ma.pe
-													Advantages
-														Poll shows as overlay on stream
-														Can be seen by people watching the VOD
-														Looks cool
-													Disadvantages
-														Only the broadcaster can start the poll, since it is linked to the twitch account
-												Strawpoll
-													Advantages
-														Mods can start a poll
-													Disadvantages
-														Poll has to be pasted as link in chat
-														People watching the VOD will not be able to access the poll (I think)
-										*/
+						"channelPoints": false, /* Alternatives
+										points through StreamLabs or StreamElements bots
+										these are also awarded when viewers watch the stream
+										EXTRA: users can gamble, dual with their points etc.
+									*/
+						"polls": false, /* Alternatives
+									poll.ma.pe
+										Advantages
+											Poll shows as overlay on stream
+											Can be seen by people watching the VOD
+											Looks cool
+										Disadvantages
+											Only the broadcaster can start the poll, since it is linked to the twitch account
+									Strawpoll
+										Advantages
+											Mods can start a poll
+										Disadvantages
+											Poll has to be pasted as link in chat
+											People watching the VOD will not be able to access the poll (I think)
+								*/
 						"predictions": true
 					}
 				}
@@ -163,10 +163,11 @@
 							},
 							"emotes": "see subscriptions",
 							"emotePrefix": "depands on username",
-							/* 	when user becomes affliate, twitch will automatically create an emote prefix
-								emote prefix is (generally) the first 6 characters (letters or numbers) of the username
-								if the username is shorter than 6 characters
-									twitch will add random numbers until it is 6 characters
+							/* 	when user becomes affliate
+									twitch will automatically create an emote prefix
+									emote prefix is (generally) the first 6 characters (letters or numbers) of the username
+										if the username is shorter than 6 characters
+										twitch will add random numbers until it is 6 characters
 							
 							*/
 							"bitBadges": true,
