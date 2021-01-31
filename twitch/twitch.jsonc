@@ -413,8 +413,7 @@
 			"customName": true
 		}
 	}, // END OF DISCOVERABILITY
-	// TODO - 		LIVE playback... things: all buttons + live rewind 
-	"liveFeatures": { // things available for the streamer
+	"liveFeatures": { // things available for the viewer
 		"playerButtons": [
 			"settings",
 			"PiP", // picture in picture
@@ -474,309 +473,364 @@
 			"picture only",
 			"picture and text",
 			"text only",
-			"extentions"
+			"extensions"
 		],
 		"panelDimentions": { // in pixels
 			"maxHeight": 600,
 			"maxWidth": 320 // images wider than this will be scaled down
 		}
 	}, // END OF DISCOVERABILITY
-	"creatorDashboard": { // schedule, about, everything in the settings holy shit this is a lot of work monkaS
-		"streamManager": {
-			//top bar
-			"uptime": true,
-			"viewerCount": true,
-			"viewCount": true,
-			"followerCount": true,
-			"streamHealth": true, // bitrate also available as a panel
-			"subscriberCount": true,
-			"subPointCount": true,
-			//panels below
-			"activityFeed": true,
-			"streamPreview": true,
-			"chat": true,
-			"quickActions": true, // i dont know how to compare that to youtube tbh
-			"editStreamInfo": true,
-			"showActiveMods": true
-		},
-		"insights": {
-			"channelAnalytics": true,
-			"lastStreamSummary": true
-			/* 	after this there is an achievements page which is literally full of shit. it's just a
-					stream for x amount of hours, congratulations
-					get this many viewers, congratulations
-					stream for y days, congratulations
-					they dont provide any value, so i skipped this
-				*/
-		},
-		"community": {
-			"roleManager": {
-				"availableRoles": { /* 	NOTE: User can be a 
-												Moderator and Editor
-												VIP and Editor
-												But NOT Moderator and VIP 
-										*/
-					"editor": {
-						"canEditStreamInfo": true,
-						"canRunAds": true,
-						"canEditVideoInfo": true,
-						"canUploadVideos": true,
-						"canCreateEvents": true,
-						"canStartReruns": true,
-						"canDownloadPastVODs": true,
-						"canManageClips": true,
-						"canTimeoutViewers": false, // this includes banning
-						"canEnableSlowMode": false,
-						"canEnableSubOnlyMode": false,
-						"canEnableFollowerMode": false,
-						"isAffectedByModes": true,
-						"canSendLinks": false
+	"creatorFeatures": [
+		{
+			"creatorDashboard": { // schedule, about, everything in the settings holy shit this is a lot of work monkaS
+				"streamManager": {
+					//top bar
+					"uptime": true,
+					"viewerCount": true,
+					"viewCount": true,
+					"followerCount": true,
+					"streamHealth": true, // bitrate also available as a panel
+					"subscriberCount": true,
+					"subPointCount": true,
+					//panels below
+					"activityFeed": true,
+					"streamPreview": true,
+					"chat": true,
+					"quickActions": true, // i dont know how to compare that to youtube tbh
+					"editStreamInfo": true,
+					"showActiveMods": true
+				},
+				"insights": {
+					"channelAnalytics": true,
+					"lastStreamSummary": true
+					/* 	after this there is an achievements page which is literally full of shit. it's just a
+							stream for x amount of hours, congratulations
+							get this many viewers, congratulations
+							stream for y days, congratulations
+							they dont provide any value, so i skipped this
+						*/
+				},
+				"community": {
+					"roleManager": {
+						"availableRoles": { /* 	NOTE: User can be a 
+														Moderator and Editor
+														VIP and Editor
+														But NOT Moderator and VIP 
+												*/
+							"editor": {
+								"canEditStreamInfo": true,
+								"canRunAds": true,
+								"canEditVideoInfo": true,
+								"canUploadVideos": true,
+								"canCreateEvents": true,
+								"canStartReruns": true,
+								"canDownloadPastVODs": true,
+								"canManageClips": true,
+								"canTimeoutViewers": false, // this includes banning
+								"canEnableSlowMode": false,
+								"canEnableSubOnlyMode": false,
+								"canEnableFollowerMode": false,
+								"canChangeTitle": false,
+								"canChangeCategory": false,
+								"isAffectedByModes": true, // i think? not sure
+								"canSendLinks": false
+							},
+							"moderator": {
+								"canEditStreamInfo": false,
+								"canRunAds": false,
+								"canEditVideoInfo": false,
+								"canUploadVideos": false,
+								"canCreateEvents": false,
+								"canStartReruns": false,
+								"canDownloadPastVODs": false,
+								"canManageClips": false,
+								"canTimeoutViewers": true, // this includes banning
+								"canEnableSlowMode": true,
+								"canEnableSubOnlyMode": true,
+								"canEnableFollowerMode": true,
+								"canChangeTitle": true,
+								"canChangeCategory": true,
+								"isAffectedByModes": false,
+								"canSendLinks": true
+							},
+							"vip": {
+								"canEditStreamInfo": false,
+								"canRunAds": false,
+								"canEditVideoInfo": false,
+								"canUploadVideos": false,
+								"canCreateEvents": false,
+								"canStartReruns": false,
+								"canDownloadPastVODs": false,
+								"canManageClips": false,
+								"canTimeoutViewers": false, // this includes banning
+								"canEnableSlowMode": false,
+								"canEnableSubOnlyMode": false,
+								"canEnableFollowerMode": false,
+								"canChangeTitle": false,
+								"canChangeCategory": false,
+								"isAffectedByModes": false,
+								"canSendLinks": true
+							}
+						}
 					},
-					"moderator": {
-						"canEditStreamInfo": false,
-						"canRunAds": false,
-						"canEditVideoInfo": false,
-						"canUploadVideos": false,
-						"canCreateEvents": false,
-						"canStartReruns": false,
-						"canDownloadPastVODs": false,
-						"canManageClips": false,
-						"canTimeoutViewers": true, // this includes banning
-						"canEnableSlowMode": true,
-						"canEnableSubOnlyMode": true,
-						"canEnableFollowerMode": true,
-						"isAffectedByModes": false,
-						"canSendLinks": true
+					"activityLog": {
+						"logsShown": [
+							"ad breaks",
+							"category change",
+							"title change"
+						]
 					},
-					"vip": {
-						"canEditStreamInfo": false,
-						"canRunAds": false,
-						"canEditVideoInfo": false,
-						"canUploadVideos": false,
-						"canCreateEvents": false,
-						"canStartReruns": false,
-						"canDownloadPastVODs": false,
-						"canManageClips": false,
-						"canTimeoutViewers": false, // this includes banning
-						"canEnableSlowMode": false,
-						"canEnableSubOnlyMode": false,
-						"canEnableFollowerMode": false,
-						"isAffectedByModes": false,
-						"canSendLinks": true
-					}
-				}
-			},
-			"activityLog": {
-				"logsShown": [
-					"ad breaks",
-					"category change",
-					"title change"
-				]
-			},
-			"followerList": true
-		},
-		"content": {
-			"videoEditor": true, // It's called Video Producer, but it's similar to video editor on YouTube
-			"playlists": true, /* They call it collections, but it's essentially a playlist of past livestreams
-									but since past livestreams get deleted after [availableStatuses.affiliate/partner.VODFeatures.storageDays] days it's pointless */
-			"clips": true
-		},
-		"preferences": {
-			"channel": { // im not going to include every single settings, just the highlights
-				"disconnectProtection": true,
-				"storePastBroadcasts": true,
-				"matureContent": true,
-				"enableClips": true,
-				"latency": [
-					"low",
-					"high"
-				],
-				"offlineScreen": true,
-				"schedule": true,
-				"suggestedChannels": true,
-				"hostSettings": [
-					"auto host from list",
-					"auto host from team"
-				],
-				"raids": [
-					"allow all",
-					"allow from friends",
-					"allow from team",
-					"block all"
-				]
-			},
-			"moderation": {
-				"automod": {
-					"blockedTerms": true,
-					"permittedTerms": true // overrides default automod settings
+					"followerList": true
 				},
-				"blockHyperlinks": true,
-				"nonModChatDelay": [ // in seconds
-					2,
-					4,
-					6
-				],
-				"requireEmailVerification": true,
-				"chatRules": true, // streamer can set custom rules that the viewers must follow. this is displayed the first time they try to type in chat
-				"unbanRequests": true
-			},
-			"affiliateSettings": {
-				"subscribers": {
-					"customSubscriptionNames": true,
-					"customSubscriberBadges": true,
-					"subscriberBenefits": [
-						"ad-free viewing",
-						"ignore slow mode",
-						"subscriber only chat",
-						"subscriber only archives"
-					]
+				"content": {
+					"videoEditor": true, // It's called Video Producer, but it's similar to video editor on YouTube
+					"playlists": true, /* They call it collections, but it's essentially a playlist of past livestreams
+											but since past livestreams get deleted after [availableStatuses.affiliate/partner.VODFeatures.storageDays] days it's pointless */
+					"clips": true
 				},
-				"bits": {
-					"setMinimum": true,
-					"other": "streamer can set custom badges for viewers that cheer (send bits) more than a certain point. ex: over 1, over 100, over 1000. Populated by default"
-				},
-				"hypeTrain": {
-					"explanationFromTwitch": "Hype Train is a super-sized celebration when community members unite to support a streamer.",
-					"actualExplanation": "A bar at the top of chat that counts how many viewers have subscribed, gifted subscriptions or cheered bits. It has 5 levels that count to 100%. After level 5 is complete, the counter goes over 100% eg. 105%",
-					"options": [
-						"enabled",
-						"disabled",
-						"kickoff thresshold", // number of events that must occur before the hype train starts
-						{
-							"goalLevels": [
-								"easy",
-								"medium",
-								"hard",
-								"super hard",
-								"insane"
+				"preferences": {
+					"channel": { // im not going to include every single settings, just the highlights
+						"disconnectProtection": true,
+						"storePastBroadcasts": true,
+						"matureContent": true,
+						"enableClips": true,
+						"latency": [
+							"low",
+							"high"
+						],
+						"offlineScreen": true,
+						"schedule": true,
+						"suggestedChannels": true,
+						"hostSettings": [
+							"auto host from list",
+							"auto host from team"
+						],
+						"raids": [
+							"allow all",
+							"allow from friends",
+							"allow from team",
+							"block all"
+						]
+					},
+					"moderation": {
+						"automod": {
+							"blockedTerms": true,
+							"permittedTerms": true // overrides default automod settings
+						},
+						"blockHyperlinks": true,
+						"nonModChatDelay": [ // in seconds
+							2,
+							4,
+							6
+						],
+						"requireEmailVerification": true,
+						"chatRules": true, // streamer can set custom rules that the viewers must follow. this is displayed the first time they try to type in chat
+						"unbanRequests": true
+					},
+					"affiliateSettings": {
+						"subscribers": {
+							"customSubscriptionNames": true,
+							"customSubscriberBadges": true,
+							"subscriberBenefits": [
+								"ad-free viewing",
+								"ignore slow mode",
+								"subscriber only chat",
+								"subscriber only archives"
 							]
 						},
-						{
-							"coolDownPeriod": [ // in hours
-								1,
-								2,
-								3,
-								4,
-								5,
-								6,
-								7,
-								8
+						"bits": {
+							"setMinimum": true,
+							"other": "streamer can set custom badges for viewers that cheer (send bits) more than a certain point. ex: over 1, over 100, over 1000. Populated by default"
+						},
+						"hypeTrain": {
+							"explanationFromTwitch": "Hype Train is a super-sized celebration when community members unite to support a streamer.",
+							"actualExplanation": "A bar at the top of chat that counts how many viewers have subscribed, gifted subscriptions or cheered bits. It has 5 levels that count to 100%. After level 5 is complete, the counter goes over 100% eg. 105%",
+							"options": [
+								"enabled",
+								"disabled",
+								"kickoff thresshold", // number of events that must occur before the hype train starts
+								{
+									"goalLevels": [
+										"easy",
+										"medium",
+										"hard",
+										"super hard",
+										"insane"
+									]
+								},
+								{
+									"coolDownPeriod": [ // in hours
+										1,
+										2,
+										3,
+										4,
+										5,
+										6,
+										7,
+										8
+									]
+								}
 							]
 						}
+					}
+				},
+				"viewerRewards": {
+					"channelPoints": {
+						"options": [
+							"enabled",
+							"disabled",
+							"custom name",
+							"custom icon"
+						],
+						"customRewards": true
+					},
+					"emotes": {
+						"customEmotes": true
+					}
+				}
+			} // END OF CREATOR DASHBOARD
+		},
+		{
+			"integrations": [
+				{
+					"discord": {
+						"benefits": [
+							"subscriber only text channels",
+							"subscriber only voice channels",
+							"subscribers can use emotes globaly"
+						]
+					}
+				},
+				{
+					"streamdeck": {
+						"benefits": [
+							"send message in chat",
+							"clear chat",
+							"enable emote only mode",
+							{
+								"followerMode": [
+									"10 minutes",
+									"30 minutes",
+									"1 hour",
+									"1 day",
+									"1 week",
+									"1 month",
+									"3 months"
+								]
+							},
+							{
+								"ad": [ // in seconds
+									30,
+									60,
+									90,
+									120,
+									150,
+									180,
+									210,
+									240,
+									270,
+									300,
+									330,
+									360
+								]
+							},
+							{
+								"slowMode": [ // in seconds
+									1,
+									3,
+									5,
+									10,
+									15,
+									30,
+									60,
+									120
+								]
+							},
+							"change stream title",
+							"change stream category (game)",
+							"enable sub-only mode",
+							"create marker",
+							"viewer count",
+							"create clip",
+							"open last clip"
+						]
+					}
+				},
+				"chatterino", // chat app that lets you monitor multiple chats at the same time
+				"chatty", // chat client for twitch
+				{
+					"lioranboard": {
+						"keyFeatures": [
+							"streamdeck alternative with a pc and android app",
+							"control obs with sources, scenes, filters",
+							"includes TWITCH INTEGRATION, so events like channel points, subscriptions etc can trigger events"
+						]
+					}
+				},
+				"PenguinDrop", // Twitch-integrated Penguin Skydiving game
+				"Stream Avatars",
+				"Stream Raiders",
+				"Kappamon"
+			]
+		},
+		{
+			"extensions": { // for google chrome that work with twitch
+				"FrankerFaceZ": {
+					"keyFeatures": [
+						"allows extra emotes that only people with the extension can see",
+						"allows user to customize their experience on Twitch - there are SO many settings, I'm not going to list them all"
+					],
+					"animatedEmotes": false,
+					"publicLibrary": true,
+					"customEmotes": true,
+					"maxEmotes": 25
+				},
+				"Better Twitch TV": {
+					"keyFeatures": [
+						"allows extra emotes that only people with the extension can see",
+						"allows user to customize their experience on Twitch - there are SO many settings, I'm not going to list them all"
+					],
+					"free": {
+						"animatedEmotes": true,
+						"publicLibrary": true,
+						"customEmotes": true,
+						"maxEmotes": 30 // this includes 15 from the public library and 15 channel specific
+					},
+					"pro": {
+						"animatedEmotes": true,
+						"publicLibrary": true,
+						"customEmotes": true,
+						"maxEmotes": 100 // this includes 50 animated and 50 static
+					}
+				},
+				"Pronoun extension": {
+					"keyFeatures": [
+						"allows the user to set their pronoun. Other users with the extension installed will be able to see it next to the username in chat."
 					]
 				}
 			}
 		},
-		"viewerRewards": {
-			"channelPoints": {
-				"options": [
-					"enabled",
-					"disabled",
-					"custom name",
-					"custom icon"
-				],
-				"customRewards": true
-			},
-			"emotes": {
-				"customEmotes": true
-			}
-		}
-	}, // END OF CREATOR DASHBOARD
-	"integrations": {
-		"discord": {
-			"benefits": [
-				"subscriber only text channels",
-				"subscriber only voice channels",
-				"subscribers can use emotes globaly"
-			]
-		},
-		"streamdeck": {
-			"benefits": [
-				"send message in chat",
-				"clear chat",
-				"enable emote only mode",
-				{
-					"followerMode": [
-						"10 minutes",
-						"30 minutes",
-						"1 hour",
-						"1 day",
-						"1 week",
-						"1 month",
-						"3 months"
-					]
-				},
-				{
-					"ad": [ // in seconds
-						30,
-						60,
-						90,
-						120,
-						150,
-						180,
-						210,
-						240,
-						270,
-						300,
-						330,
-						360
-					]
-				},
-				{
-					"slowMode": [ // in seconds
-						1,
-						3,
-						5,
-						10,
-						15,
-						30,
-						60,
-						120
-					]
-				},
-				"change stream title",
-				"change stream category (game)",
-				"enable sub-only mode",
-				"create marker",
-				"viewer count",
-				"create clip",
-				"open last clip"
+		{
+			"chatBots": [
+				"streamElements",
+				"streamLabs",
+				"nightbot",
+				"fossabot",
+				"moobbot",
+				"coebot",
+				"wizebot",
+				"phantombot"
 			]
 		}
+	],
+	"playbackFeatures": {
+		// playback speeds and stuff
 	},
-	"extentions": {
-		"FrankerFaceZ": {
-			"keyFeatures": [
-				"allows extra emotes that only people with the extention can see",
-				"allows user to customize their experience on Twitch - there are SO many settings, I'm not going to list them all"
-			],
-			"animatedEmotes": false,
-			"publicLibrary": true,
-			"customEmotes": true,
-			"maxEmotes": 25
-		},
-		"Better Twitch TV": {
-			"keyFeatures": [
-				"allows extra emotes that only people with the extention can see",
-				"allows user to customize their experience on Twitch - there are SO many settings, I'm not going to list them all"
-			],
-			"free": {
-				"animatedEmotes": true,
-				"publicLibrary": true,
-				"customEmotes": true,
-				"maxEmotes": 30  // this includes 15 from the public library and 15 channel specific
-			},
-			"pro": {
-				"animatedEmotes": true,
-				"publicLibrary": true,
-				"customEmotes": true,
-				"maxEmotes": 100
-			}
-		}
+	"statistics": {
+		// market share
+		// demographics
+		// 
 	}
 } // END OF TWITCH
-
-// TODO - 		VOD replay... things. playback speeds etc
-// TODO - add 	market share, demographics, latency, streamer dashboards, tools available - streamelements/streamlabs/nightbots/fossa, other
-// TODO - 		read affiliate agreement, read partner agreement 
-// TODO - 		GIFTED SUBS?
+// TODO - read affiliate agreement, read partner agreement 
+// TODO - GIFTED SUBS????? HELLO?
