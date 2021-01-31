@@ -21,7 +21,7 @@ For now:
 </ul>
   <p>Also for now, the <strong>YouTube folder is empty</strong> because I still haven't finished the Twitch file yet. Additionally I'm looking for YouTube streamers that can help me with some things, similar to the "documentation" I have done for Twitch. If you are interested, feel free to use the Issues tab or send me a DM on Twitter.</p> 
   
-Soon:
+Soon™:
 <ul>
   <li>After completing both files I will combine them into one and make a more comprehensive/easily readable file</li>
 </ul>
